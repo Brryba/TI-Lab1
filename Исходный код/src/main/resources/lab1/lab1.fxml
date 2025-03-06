@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab1.GUI.Lab1Controller">
+    <MenuBar layoutY="7.0" prefHeight="26.0" prefWidth="200.0">
+        <Menu mnemonicParsing="false" text="Файл">
+            <MenuItem mnemonicParsing="false" onAction="#open" text="Открыть"/>
+            <MenuItem mnemonicParsing="false" onAction="#save" text="Сохранить"/>
+        </Menu>
+    </MenuBar>
+    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/17.0.2-ea">
+        <children>
+            <Button fx:id="encodeButton" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#encodeButtonAction" prefHeight="29.0" prefWidth="142.0" text="Зашифровать" />
+            <Button fx:id="decodeButton" layoutX="14.0" layoutY="151.0" mnemonicParsing="false" onAction="#decodeButtonAction" prefHeight="29.0" prefWidth="142.0" text="Расшифровать" />
+            <TextField fx:id="inputField" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="350.0" />
+            <TextField fx:id="outputField" editable="false" layoutX="408.0" layoutY="131.0" prefHeight="25.0" prefWidth="350.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="Исходный текст:" />
+            <Label layoutX="408.0" layoutY="108.0" text="Преобразованный текст:" />
+
+            <RadioButton fx:id="columns" layoutX="239.0" layoutY="156.0" onAction="#setCipher" text="Вижинера" userData="vigenere">
+                <toggleGroup>
+                    <ToggleGroup fx:id="cipherSelector" />
+                </toggleGroup>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </RadioButton>
+
+            <RadioButton fx:id="vigenere" layoutX="239.0" layoutY="107.0" onAction="#setCipher" selected="true" text="Столбцовый" toggleGroup="$cipherSelector" userData="columns">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </RadioButton>
+
+            <TextField fx:id="keyField" layoutX="408.0" layoutY="40.0" prefHeight="25.0" prefWidth="350.0" />
+            <Label layoutX="408.0" layoutY="14.0" text="Ключ:" />
+
+        </children>
+    </Pane>
+</VBox>
